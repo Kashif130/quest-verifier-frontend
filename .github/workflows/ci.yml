@@ -1,0 +1,43 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Contract lifecycle tests
+        run: python3 tests/sim/run_direct_tests.py
+      - name: Schema rules
+        run: python3 -m unittest discover -s tests/sim -v
+      - name: Test vectors are up to date
+        run: |
+          python3 tests/sim/generate_vectors.py
+          git diff --exit-code tests/vectors/quest_vectors.json
+      - name: Contract fingerprint
+        run: |
+          grep -n '^VERSION' contracts/QuestVerifier.py
+          sha256sum contracts/QuestVerifier.py
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # No package-lock.json is committed yet; switch to `npm ci` once one is.
+      - run: npm install
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build

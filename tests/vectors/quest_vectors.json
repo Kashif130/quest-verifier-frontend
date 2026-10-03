@@ -1,0 +1,565 @@
+{
+  "iso": [
+    {
+      "input": "2099-12-31T23:59:59Z",
+      "valid": true
+    },
+    {
+      "input": "2026-01-01T00:00:00Z",
+      "valid": true
+    },
+    {
+      "input": "2000-01-01T00:00:00Z",
+      "valid": true
+    },
+    {
+      "input": "1999-12-31T23:59:59Z",
+      "valid": false
+    },
+    {
+      "input": "zzzz-zz-zzTzz:zz:zzZ",
+      "valid": false
+    },
+    {
+      "input": "2099-13-01T00:00:00Z",
+      "valid": false
+    },
+    {
+      "input": "2099-00-10T00:00:00Z",
+      "valid": false
+    },
+    {
+      "input": "2099-01-00T00:00:00Z",
+      "valid": false
+    },
+    {
+      "input": "2099-01-32T00:00:00Z",
+      "valid": false
+    },
+    {
+      "input": "2099-01-01T24:00:00Z",
+      "valid": false
+    },
+    {
+      "input": "2099-01-01T00:60:00Z",
+      "valid": false
+    },
+    {
+      "input": "2099-01-01T00:00:60Z",
+      "valid": false
+    },
+    {
+      "input": "2099-01-01 00:00:00Z",
+      "valid": false
+    },
+    {
+      "input": "2099-01-01T00:00:00+0",
+      "valid": false
+    },
+    {
+      "input": "2099-01-01T00:00:00",
+      "valid": false
+    },
+    {
+      "input": "",
+      "valid": false
+    },
+    {
+      "input": "not-a-date",
+      "valid": false
+    },
+    {
+      "input": "2099-01-01T00:00:00.5Z",
+      "valid": false
+    },
+    {
+      "input": "20990101T000000Z!!!!!",
+      "valid": false
+    }
+  ],
+  "domain": [
+    {
+      "input": "example.com",
+      "valid": true
+    },
+    {
+      "input": "docs.example.co.uk",
+      "valid": true
+    },
+    {
+      "input": "my-site.dev",
+      "valid": true
+    },
+    {
+      "input": "a1.b2.example.io",
+      "valid": true
+    },
+    {
+      "input": "EXAMPLE.com",
+      "valid": false
+    },
+    {
+      "input": "127.0.0.1",
+      "valid": false
+    },
+    {
+      "input": "10.0.0.5",
+      "valid": false
+    },
+    {
+      "input": "192.168.1.1",
+      "valid": false
+    },
+    {
+      "input": "169.254.169.254",
+      "valid": false
+    },
+    {
+      "input": "localhost",
+      "valid": false
+    },
+    {
+      "input": "printer.local",
+      "valid": false
+    },
+    {
+      "input": "api.internal",
+      "valid": false
+    },
+    {
+      "input": "box.localhost",
+      "valid": false
+    },
+    {
+      "input": "nas.lan",
+      "valid": false
+    },
+    {
+      "input": "example.c0m",
+      "valid": false
+    },
+    {
+      "input": "example.x",
+      "valid": false
+    },
+    {
+      "input": "-bad.example.com",
+      "valid": false
+    },
+    {
+      "input": "bad-.example.com",
+      "valid": false
+    },
+    {
+      "input": "exa mple.com",
+      "valid": false
+    },
+    {
+      "input": "example..com",
+      "valid": false
+    },
+    {
+      "input": "example.com.",
+      "valid": false
+    },
+    {
+      "input": "ex@mple.com",
+      "valid": false
+    },
+    {
+      "input": "a.b",
+      "valid": false
+    },
+    {
+      "input": "ab",
+      "valid": false
+    },
+    {
+      "input": ".example.com",
+      "valid": false
+    },
+    {
+      "input": "example.com-",
+      "valid": false
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.com",
+      "valid": false
+    },
+    {
+      "input": "example.aaaaaaaaaaaaaaaaaaaaaaaaa",
+      "valid": false
+    }
+  ],
+  "keywords": [
+    {
+      "input": "",
+      "ok": []
+    },
+    {
+      "input": "#genlayer",
+      "ok": [
+        "#genlayer"
+      ]
+    },
+    {
+      "input": "#genlayer, #web3",
+      "ok": [
+        "#genlayer",
+        "#web3"
+      ]
+    },
+    {
+      "input": "a,b,c,d,e",
+      "ok": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ]
+    },
+    {
+      "input": "a,b,c,d,e,f",
+      "error": true
+    },
+    {
+      "input": " A , a , B ",
+      "ok": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "input": ",,,",
+      "ok": []
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "ok": [
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      ]
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "error": true
+    },
+    {
+      "input": ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+      "error": true
+    },
+    {
+      "input": "word1,Word1,WORD1",
+      "ok": [
+        "word1"
+      ]
+    },
+    {
+      "input": "#a, #b ,#c",
+      "ok": [
+        "#a",
+        "#b",
+        "#c"
+      ]
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "error": true
+    },
+    {
+      "input": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+      "error": true
+    }
+  ],
+  "proofId": [
+    {
+      "kind": "tweet",
+      "url": "https://x.com/alice/status/1000000000000000001",
+      "ok": "tweet:1000000000000000001"
+    },
+    {
+      "kind": "tweet",
+      "url": "https://twitter.com/Alice/status/1000000000000000001?s=20",
+      "ok": "tweet:1000000000000000001"
+    },
+    {
+      "kind": "tweet",
+      "url": "https://x.com/alice/status/1000000000000000001/",
+      "ok": "tweet:1000000000000000001"
+    },
+    {
+      "kind": "tweet",
+      "url": "https://x.com/alice/status/1000000000000000001#frag",
+      "ok": "tweet:1000000000000000001"
+    },
+    {
+      "kind": "tweet",
+      "url": "https://x.com/alice/status/1000000000000000001abc",
+      "ok": "tweet:1000000000000000001"
+    },
+    {
+      "kind": "tweet",
+      "url": "https://x.com/alice/status/",
+      "error": true
+    },
+    {
+      "kind": "tweet",
+      "url": "https://x.com/alice",
+      "error": true
+    },
+    {
+      "kind": "github_pr",
+      "url": "https://github.com/octocat/hello-world/pull/42",
+      "ok": "pr:octocat/hello-world/pull/42"
+    },
+    {
+      "kind": "github_pr",
+      "url": "https://github.com/OctoCat/Hello-World/pull/42/files",
+      "ok": "pr:octocat/hello-world/pull/42"
+    },
+    {
+      "kind": "github_pr",
+      "url": "https://github.com/octocat/hello-world/issues/1",
+      "error": true
+    },
+    {
+      "kind": "github_pr",
+      "url": "https://github.com/octocat/hello-world/pull/x",
+      "error": true
+    },
+    {
+      "kind": "github_pr",
+      "url": "https://github.com/octocat/pull/42",
+      "error": true
+    },
+    {
+      "kind": "generic",
+      "url": "https://example.com/proof/1",
+      "ok": "url:https://example.com/proof/1"
+    },
+    {
+      "kind": "generic",
+      "url": "https://Example.com/Proof/1/?q=1",
+      "ok": "url:https://example.com/proof/1"
+    }
+  ],
+  "code": [
+    {
+      "questId": 0,
+      "address": "0xa1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+      "code": "GLQ-0-a1a1a1a1a1a1a1a1"
+    },
+    {
+      "questId": 0,
+      "address": "0xABABABABABABABABABABABABABABABABABABABAB",
+      "code": "GLQ-0-abababababababab"
+    },
+    {
+      "questId": 0,
+      "address": "0x0123456789abcdef0123456789abcdef01234567",
+      "code": "GLQ-0-0123456789abcdef"
+    },
+    {
+      "questId": 7,
+      "address": "0xa1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+      "code": "GLQ-7-a1a1a1a1a1a1a1a1"
+    },
+    {
+      "questId": 7,
+      "address": "0xABABABABABABABABABABABABABABABABABABABAB",
+      "code": "GLQ-7-abababababababab"
+    },
+    {
+      "questId": 7,
+      "address": "0x0123456789abcdef0123456789abcdef01234567",
+      "code": "GLQ-7-0123456789abcdef"
+    },
+    {
+      "questId": 123456,
+      "address": "0xa1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+      "code": "GLQ-123456-a1a1a1a1a1a1a1a1"
+    },
+    {
+      "questId": 123456,
+      "address": "0xABABABABABABABABABABABABABABABABABABABAB",
+      "code": "GLQ-123456-abababababababab"
+    },
+    {
+      "questId": 123456,
+      "address": "0x0123456789abcdef0123456789abcdef01234567",
+      "code": "GLQ-123456-0123456789abcdef"
+    }
+  ],
+  "validateUrl": [
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "https://x.com/alice/status/1000000000000000001",
+      "ok": "https://x.com/alice/status/1000000000000000001"
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "https://twitter.com/alice/status/1000000000000000001",
+      "ok": "https://twitter.com/alice/status/1000000000000000001"
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "https://X.com/alice/status/1000000000000000001",
+      "error": true
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "http://x.com/alice/status/1000000000000000001",
+      "error": true
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "https://x.com/alice/status/1000000000000000001#top",
+      "ok": "https://x.com/alice/status/1000000000000000001"
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "https://github.com/octocat/hello-world/pull/42",
+      "error": true
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "https://x.com/alice/status/1000000000000000001 extra",
+      "error": true
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "https://x.com/alice/status/1\"2",
+      "error": true
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "",
+      "error": true
+    },
+    {
+      "kind": "tweet",
+      "domain": "",
+      "url": "https://x.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "error": true
+    },
+    {
+      "kind": "github_pr",
+      "domain": "",
+      "url": "https://github.com/octocat/hello-world/pull/42",
+      "ok": "https://github.com/octocat/hello-world/pull/42"
+    },
+    {
+      "kind": "github_pr",
+      "domain": "",
+      "url": "https://github.com/octocat/hello-world/issues/1",
+      "error": true
+    },
+    {
+      "kind": "github_pr",
+      "domain": "",
+      "url": "https://x.com/alice/status/1000000000000000001",
+      "error": true
+    },
+    {
+      "kind": "generic",
+      "domain": "example.com",
+      "url": "https://example.com/proof/1",
+      "ok": "https://example.com/proof/1"
+    },
+    {
+      "kind": "generic",
+      "domain": "example.com",
+      "url": "https://blog.example.com/p",
+      "ok": "https://blog.example.com/p"
+    },
+    {
+      "kind": "generic",
+      "domain": "example.com",
+      "url": "https://not-example.com/p",
+      "error": true
+    },
+    {
+      "kind": "generic",
+      "domain": "example.com",
+      "url": "https://example.com.evil.org/p",
+      "error": true
+    },
+    {
+      "kind": "generic",
+      "domain": "example.com",
+      "url": "http://example.com/p",
+      "error": true
+    },
+    {
+      "kind": "generic",
+      "domain": "example.com",
+      "url": "https://user@example.com/p",
+      "error": true
+    },
+    {
+      "kind": "generic",
+      "domain": "example.com",
+      "url": "https://example.com:8443/p",
+      "error": true
+    }
+  ],
+  "deposit": [
+    {
+      "reward": "100",
+      "winners": 3,
+      "feeBps": 0,
+      "total": "300",
+      "fee": "0",
+      "deposit": "300"
+    },
+    {
+      "reward": "100",
+      "winners": 3,
+      "feeBps": 500,
+      "total": "300",
+      "fee": "15",
+      "deposit": "315"
+    },
+    {
+      "reward": "1",
+      "winners": 1,
+      "feeBps": 1000,
+      "total": "1",
+      "fee": "0",
+      "deposit": "1"
+    },
+    {
+      "reward": "1234567890123456789",
+      "winners": 7,
+      "feeBps": 250,
+      "total": "8641975230864197523",
+      "fee": "216049380771604938",
+      "deposit": "8858024611635802461"
+    },
+    {
+      "reward": "1000000000000000000",
+      "winners": 1000,
+      "feeBps": 1000,
+      "total": "1000000000000000000000",
+      "fee": "100000000000000000000",
+      "deposit": "1100000000000000000000"
+    },
+    {
+      "reward": "3",
+      "winners": 3,
+      "feeBps": 333,
+      "total": "9",
+      "fee": "0",
+      "deposit": "9"
+    }
+  ]
+}
